@@ -1,22 +1,15 @@
-package com.company;
+package zad19;
 
-public class Student {
+public class Student extends Person{
 
-    private String name;
-    private double averageGrade;
-
-    public Student(){
-
-    }
-    public Student(String name, double averageGrade){
-        this.name = name;
-        this.averageGrade = averageGrade;
-    }
-    public double getAverageGrade(){
-        return this.averageGrade;
-    }
-    public String getName(){
-        return this.name;
-    }
+    private String classStatus;
+    public Student(String name, String address, String phoneNumber, String email, String classStatus) {
+        super(name, address, phoneNumber, email);
     }
 
+    @Override
+    public String toString(){
+
+        return super.toString()+String.format(", Class Status: %s",this.classStatus);
+    }
+}
