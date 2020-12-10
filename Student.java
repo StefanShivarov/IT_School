@@ -1,15 +1,20 @@
-package zad19;
+package zadachi;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student extends Person{
 
-    private String classStatus;
-    public Student(String name, String address, String phoneNumber, String email, String classStatus) {
-        super(name, address, phoneNumber, email);
+    private List<Double> grades;
+    private School school;
+
+    public Student(String name, int age, String placeOfBirth, School school) {
+        super(name, age, placeOfBirth);
+        this.grades = new ArrayList<>();
+        this.setSchool(school);
     }
 
-    @Override
-    public String toString(){
-
-        return super.toString()+String.format(", Class Status: %s",this.classStatus);
+    public void setSchool(School school) {
+        this.school = school;
     }
 }
